@@ -1,5 +1,7 @@
 import os
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 import tensorflow as tf
 import keras
 from keras.models import load_model
