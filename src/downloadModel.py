@@ -1,4 +1,4 @@
-from flask import requests
+import requests
 import os
 
 def downloadModel(url: str, dest_folder: str):
@@ -8,7 +8,7 @@ def downloadModel(url: str, dest_folder: str):
     filename = url.split('/')[-1].replace(" ", "_")  # be careful with file names
     file_path = os.path.join(dest_folder, filename)
 
-    r = requests.get(url, stream=True)
+    r = request.get(url, stream=True)
     if r.ok:
         print("saving to", os.path.abspath(file_path))
         with open(file_path, 'wb') as f:
