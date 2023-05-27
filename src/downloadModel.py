@@ -3,7 +3,7 @@ import os, sys, stat
 
 def downloadModel(url: str, dest_folder: str):
     if not os.path.exists(dest_folder):
-        os.chmod('../models/', stat.S_IXUSR)  # create folder if it does not exist
+        os.mkdir('../models/', stat.S_IXUSR)  # create folder if it does not exist
 
     filename = url.split('/')[-1].replace(" ", "_")  # be careful with file names
     file_path = os.path.join(dest_folder, filename)
